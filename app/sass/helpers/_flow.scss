@@ -1,0 +1,16 @@
+@mixin flowWrap($direction: column) {
+  display: flex;
+  flex: 1 0;
+  flex-direction: $direction;
+  height: 100%;
+  overflow: hidden;
+}
+
+@mixin flow {
+  @include overflowScrolling;
+
+  display: flex;
+  flex: 1 0;
+  flex-direction: column;
+  height: 100%;
+}

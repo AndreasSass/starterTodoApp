@@ -1,0 +1,63 @@
+<!-- Init angular app -->
+<html ng-app="app" lang="en">
+	<head>
+		<!-- Set base url for pretty url support angular -->
+		<base href="/">
+
+		<!-- Set meta data -->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, viewport-fit=cover">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title ng-bind="$root.metaData.title">Onboarding</title>
+
+		<!-- Get/Set assets/images -->
+		<link rel="icon" href="/images/favicon-32.png" />
+		<link rel="apple-touch-icon" href="/images/app-icon-192.png">
+		<meta name="application-name" content="introDus">
+		<meta name="apple-mobile-web-app-title" content="introDus">
+		<meta name="msapplication-TileImage" content="/images/app-icon-144.png">
+		<meta name="msapplication-TileColor" content="#00ad64">
+		<meta name="theme-color" content="#00ad64">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#00ad64">
+    	<link rel="manifest" ng-href="/assets/manifest.json">
+
+		<!-- Critical css -->
+		<style type="text/css">
+			body>.loader{position:fixed;background:#fff;z-index:10000;top:0;left:0;width:100%;height:100%;opacity:1;transition:visibility 0s,opacity .2s ease;visibility:visible}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.loader__spinner{animation:spin 1s infinite linear;border:.25rem solid #b3b3b3;border-radius:50%;border-top-color:#333;height:36px;width:36px;position:absolute;top:50%;left:50%;margin: -18px 0 0 -18px;}
+			@keyframes fadeIn{from{opacity:0}to{opacity:1}}button.loading-button{border:1px solid #ccc;border-radius:2px;overflow:hidden;background:transparent;color:#ccc;padding-right:30px;padding-left:30px;display:inline-block;text-decoration:none;font-size:14px;font-weight:400;height:40px;line-height:normal;cursor:pointer;position:relative;vertical-align:middle;text-align:center;-webkit-transition:background 350ms ease,color 350ms ease;transition:background 350ms ease,color 350ms ease;will-change:background,color;position:fixed;top:calc(50% + 60px);opacity:0;left:50%;transform:translate(-50%,-50%);animation:fadeIn 250ms forwards 3s}
+		</style>
+
+		<script type="text/javascript">
+			"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator&&navigator.serviceWorker&&"function"==typeof navigator.serviceWorker.register&&navigator.serviceWorker.register("/service-worker.js").then(function(e){e&&(e.onupdatefound=function(){var r=e&&e.installing;r&&(r.onstatechange=function(){switch(r.state){case"installed":navigator.serviceWorker.controller?console.log("New or updated content is available."):console.log("Content is now available offline!");break;case"redundant":console.error("The installing service worker became redundant.")}})})}).catch(function(e){console.error("Error during service worker registration:",e)})});
+		</script>
+	</head>
+
+	<body ng-class="{
+			'nav-open': $root.navigationToggle
+		}">
+		<div class="loader">
+			<!-- TODO - logo goes here -->
+			<div class="loader__spinner"></div>
+		</div>
+
+		<div class="wrapper">
+			<h1><%= org %></h1>
+
+			<navigation></navigation>
+
+			<div ui-view
+				class="main">
+			</div>
+		</div>
+
+		<!-- Load styles async -->
+		<noscript id="deferred-styles">
+			<link rel="stylesheet" type="text/css" href="/app.css" media="screen"/>
+		</noscript>
+
+		<!-- Embed scripts -->
+		<script type="text/javascript" async src="/app-combined.js"></script>
+	</body>
+</html>

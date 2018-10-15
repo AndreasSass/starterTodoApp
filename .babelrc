@@ -1,0 +1,25 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": [
+						"last 2 versions",
+						"ie >= 9"
+					]
+				},
+				"useBuiltIns": true,
+				"debug": true
+			}
+		]
+	],
+	"plugins": [
+		[
+			"angularjs-annotate",
+			{
+				"explicitOnly": true
+			}
+		]
+	]
+}

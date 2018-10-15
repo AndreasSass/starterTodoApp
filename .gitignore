@@ -1,0 +1,29 @@
+# Log files
+._*
+.DS*
+.idea/
+*.log
+*.log*
+.DS_Store
+# .aws-keys.js
+# .aws-conf.js
+.awspublish-*
+package-lock.json
+
+
+# Sublime specific files
+*.sublime-workspace
+#*.sublime-project
+
+
+# Folders
+node_modules/**/*
+dist/**/*
+app/vendor/**/*
+docs/**/*
+scripts/*
+
+# exception to the rule
+!scripts/.gitkeep
+
+# .

@@ -1,0 +1,16 @@
+navigation {
+	@include flowWrap;
+
+	background: $g4;
+  min-width: 320px;
+	max-width: 320px;
+	width: 320px;
+
+  @include breakpoint(-milli) {
+    // Gør noget
+  }
+}
+
+.navigation {
+	@include flow;
+}

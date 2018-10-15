@@ -1,0 +1,7 @@
+.bot-nav {
+  display: none;
+
+  @include breakpoint(-centi) {
+    display: flex;
+  }
+}

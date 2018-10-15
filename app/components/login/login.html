@@ -1,0 +1,28 @@
+<div class="login">
+	<h1>Todo app</h1>
+
+	<section>
+		<article
+			ng-class="todo.done ? 'done' : ''"
+			ng-repeat="todo in $ctrl.todos">
+			{{ todo.text }}
+
+			<button
+				ng-click="todo.done = !todo.done">
+				{{ todo.done ? 'Mark undone' : 'Mark done' }}
+			</button>
+
+			<!-- <pre>{{ todo | json }}</pre> -->
+		</article>
+	</section>
+
+	<form novalidate>
+		<input type="text" placeholder="Write a todo" ng-model="$ctrl.newTodoText" >
+
+		<button
+			ng-if="$ctrl.newTodoText"
+			ng-click="$ctrl.addTodo($event)">
+			Add todo
+		</button>
+	</form>
+</div>

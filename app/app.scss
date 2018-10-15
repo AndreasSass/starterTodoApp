@@ -1,0 +1,32 @@
+/**
+ *	Main app scss
+ */
+// Settings
+@import 'sass/variables';
+
+// Mixins
+@import 'sass/mixins/**/*';
+
+// Helpers
+@import 'sass/helpers/**/*';
+
+// Core
+@import 'sass/core/**/*';
+
+// External
+@import 'sass/external/**/*';
+
+// External
+@import 'sass/modules/**/*';
+
+// Components
+@import 'components/**/*';
+
+// Directives
+@import 'directives/**/*';
+
+body > .loader {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s ease 200ms, opacity 200ms ease;
+}

@@ -1,0 +1,7 @@
+start {
+	@include flowWrap;
+
+	.start {
+		@include flow;
+	}
+}
